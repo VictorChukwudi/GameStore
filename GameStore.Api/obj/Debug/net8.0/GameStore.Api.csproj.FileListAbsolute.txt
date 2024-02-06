@@ -23,3 +23,10 @@ C:\Users\VICTOR\Desktop\GameStore\GameStore.Api\obj\Debug\net8.0\refint\GameStor
 C:\Users\VICTOR\Desktop\GameStore\GameStore.Api\obj\Debug\net8.0\GameStore.Api.pdb
 C:\Users\VICTOR\Desktop\GameStore\GameStore.Api\obj\Debug\net8.0\GameStore.Api.genruntimeconfig.cache
 C:\Users\VICTOR\Desktop\GameStore\GameStore.Api\obj\Debug\net8.0\ref\GameStore.Api.dll
+C:\Users\VICTOR\Desktop\GameStore\GameStore.Api\obj\Debug\net8.0\GameStore.Api.sourcelink.json
+C:\Users\VICTOR\Desktop\GameStore\GameStore.Api\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\VICTOR\Desktop\GameStore\GameStore.Api\bin\Debug\net8.0\MinimalApis.Extensions.dll
+C:\Users\VICTOR\Desktop\GameStore\GameStore.Api\bin\Debug\net8.0\MiniValidation.dll
+C:\Users\VICTOR\Desktop\GameStore\GameStore.Api\obj\Debug\net8.0\GameStore.Api.csproj.AssemblyReference.cache
+C:\Users\VICTOR\Desktop\GameStore\GameStore.Api\obj\Debug\net8.0\GameStore.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\VICTOR\Desktop\GameStore\GameStore.Api\obj\Debug\net8.0\GameStore.Api.csproj.CopyComplete
