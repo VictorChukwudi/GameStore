@@ -6,23 +6,23 @@ public static class GamesEndpoints
 {
     const string getGameEndpointName = "GetGame";
 
-    
+
     public static RouteGroupBuilder MapGamesEndpoints(this IEndpointRouteBuilder routes)
     {
-        InMemRepository repository=new();
+        // InMemRepository repository=new();
         //route group - similar to route groups in expressjs
         var group = routes.MapGroup("/games")
                         .WithParameterValidation();
 
-        group.MapGet("/", () => repository.GetAll());
+        group.MapGet("/", (IGameRepository repository) => repository.GetAll());
 
-        group.MapGet("/{id}", (int id) =>
+        group.MapGet("/{id}", (IGameRepository repository, int id) =>
         {
-            Game? game = repository.Get(id); 
-            return game is not null ? Results.Ok(game): Results.NotFound();
+            Game? game = repository.Get(id);
+            return game is not null ? Results.Ok(game) : Results.NotFound();
         }).WithName(getGameEndpointName);
 
-        group.MapPost("/", (Game game) =>
+        group.MapPost("/", (IGameRepository repository, Game game) =>
         {
             repository.Create(game);
             // Console.WriteLine(games.Count);
@@ -30,9 +30,9 @@ public static class GamesEndpoints
             return Results.CreatedAtRoute(getGameEndpointName, new { id = game.Id }, game);
         });
 
-        group.MapPut("/{id}", (int id, Game updatedGame) =>
+        group.MapPut("/{id}", (IGameRepository repository, int id, Game updatedGame) =>
         {
-            Game? existingGame =repository.Get(id);
+            Game? existingGame = repository.Get(id);
             if (existingGame is null)
             {
                 return Results.NotFound();
@@ -48,14 +48,15 @@ public static class GamesEndpoints
             return Results.NoContent();
         });
 
-        group.MapDelete("/{id}", (int id) =>
+        group.MapDelete("/{id}", (IGameRepository repository, int id) =>
         {
-            Game? game =repository.Get(id);
-           if(game is not null){
-            repository.Delete(id);
-           }
+            Game? game = repository.Get(id);
+            if (game is not null)
+            {
+                repository.Delete(id);
+            }
 
-           return Results.NoContent();
+            return Results.NoContent();
         });
 
         return group;
